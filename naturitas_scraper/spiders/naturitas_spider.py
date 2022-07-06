@@ -1,3 +1,4 @@
+from pickle import TRUE
 from pkgutil import iter_modules
 import scrapy
 import re
@@ -20,7 +21,7 @@ class NaturitasSpider(scrapy.Spider):
             page_number = response.meta.get('page_number', 1)
             page_number += 1
             url = original_url+ f'?&p={page_number}'
-            yield scrapy.Request(url, callback=self.parse, meta={'page_number': page_number, 'original_url': original_url})
+            yield scrapy.Request(url, callback=self.parse, meta={'page_number': page_number, 'original_url': original_url}, dont_filter=True)
     
     def parse_product(self, response):
 
