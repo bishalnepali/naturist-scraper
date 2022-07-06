@@ -7,7 +7,7 @@ import json
 class NaturitasSpider(scrapy.Spider):
     name = 'naturitas'
     allowed_domains = ['naturitas.es']
-    start_urls = ['https://www.naturitas.es/c/u']
+    start_urls = ['https://www.naturitas.es/c/u', 'https://www.naturitas.es/c/suplementos']
 
     def parse(self, response):
         product_links = response.css('a.product-item-link::attr(href)').extract()
