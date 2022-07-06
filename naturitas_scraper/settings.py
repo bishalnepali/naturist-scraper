@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'naturitas_scraper.spiders'
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -86,3 +86,10 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+FEED_FORMAT = 'csv'
+FEED_URI = 'naturitas_scraper.csv'
+
+# ITEM_PIPELINES = {
+#     'naturitas_scraper.pipelines.CsvWriterPipeline': 300,
+# }
